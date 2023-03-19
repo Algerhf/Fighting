@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.newstart">
 
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AnimActivity"></activity>
+        <activity android:name=".ViewPagerActivity"></activity>
+        <activity android:name=".VolumeActivity" />
+        <activity android:name=".PieActivity" />
+        <activity android:name=".HwClockActivity" />
+        <activity android:name=".ScrollerActivity" />
+        <activity android:name=".AnimActivity" />
         <activity android:name=".ConstrainLayoutActivity" />
         <activity
             android:name=".RecyclerViewActivity"
             android:screenOrientation="landscape" />
         <activity android:name=".ViewDragActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

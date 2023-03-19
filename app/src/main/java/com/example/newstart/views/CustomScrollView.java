@@ -1,12 +1,14 @@
 package com.example.newstart.views;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.widget.ScrollView;
 
+/**
+ * 事件分发：外部拦截法
+ */
 public class CustomScrollView extends ScrollView {
 
     private float mDownPointY;

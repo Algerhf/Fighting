@@ -5,6 +5,9 @@ import android.graphics.Matrix;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
+/**
+ * Camera：翻转动画效果
+ */
 public class Rotate3dAnimation extends Animation {
 
     private float  mFromDegree;

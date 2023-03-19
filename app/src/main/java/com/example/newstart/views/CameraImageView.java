@@ -15,6 +15,9 @@ import androidx.appcompat.widget.AppCompatImageView;
 
 import com.example.newstart.R;
 
+/**
+ * Camera：
+ */
 public class CameraImageView extends AppCompatImageView {
 
     private int mProgress;

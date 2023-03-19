@@ -8,6 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatEditText;
 
+/**
+ * 事件分发：内部拦截法
+ */
 public class CustomTextView extends AppCompatEditText {
 
     public CustomTextView(@NonNull Context context) {
@@ -27,8 +30,6 @@ public class CustomTextView extends AppCompatEditText {
         switch (event.getAction()) {
             case MotionEvent.ACTION_MOVE:
                 getParent().requestDisallowInterceptTouchEvent(true);
-                break;
-            case MotionEvent.ACTION_UP:
                 break;
             default:
                 break;

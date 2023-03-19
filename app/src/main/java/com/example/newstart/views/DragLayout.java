@@ -48,7 +48,7 @@ public class DragLayout extends LinearLayout {
              */
             @Override
             public boolean tryCaptureView(@NonNull View child, int pointerId) {
-                return child.getId() == R.id.tv1 || child.getId() == R.id.tv2;
+                return true;
             }
 
             @Override
@@ -75,7 +75,9 @@ public class DragLayout extends LinearLayout {
             @Override
             public void onEdgeDragStarted(int edgeFlags, int pointerId) {
                 super.onEdgeDragStarted(edgeFlags, pointerId);
-                mViewDragHelper.captureChildView(findViewById(R.id.tv3), pointerId);
+
+                // 暂时开启捕获tv3的动作
+//                mViewDragHelper.captureChildView(findViewById(R.id.tv3), pointerId);
                 Log.e(TAG, "onEdgeDragStarted  edgeFlags：" + edgeFlags);
             }
 
@@ -90,12 +92,12 @@ public class DragLayout extends LinearLayout {
 
             @Override
             public void onViewReleased(@NonNull View releasedChild, float xvel, float yvel) {
-                if(releasedChild.getId()==R.id.tv2){
-                    TextView tv1 = findViewById(R.id.tv1);
-//                    mViewDragHelper.smoothSlideViewTo(releasedChild,tv1.getLeft(),tv1.getTop());
-                    mViewDragHelper.settleCapturedViewAt(tv1.getLeft(),tv1.getTop());
-                    invalidate();
-                }
+//                if(releasedChild.getId()==R.id.tv2){
+//                    TextView tv1 = findViewById(R.id.tv1);
+////                    mViewDragHelper.smoothSlideViewTo(releasedChild,tv1.getLeft(),tv1.getTop());
+//                    mViewDragHelper.settleCapturedViewAt(tv1.getLeft(),tv1.getTop());
+//                    invalidate();
+//                }
             }
         });
 

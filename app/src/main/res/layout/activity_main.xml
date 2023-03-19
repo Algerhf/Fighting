@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:clipToPadding="false"
+    android:paddingBottom="20dp"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -108,6 +110,20 @@
             app:layout_constraintTop_toBottomOf="@+id/btn_event_conflict" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_scroller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/selector_btn"
+            android:text="Scroller类"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_multi_touch" />
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_view_drag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -119,7 +135,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_multi_touch" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_scroller" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_recycler_view"
@@ -148,6 +164,62 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_hw_clock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/selector_btn"
+            android:text="华为时钟"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_anim" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_pie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/selector_btn"
+            android:text="圆环动画"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_hw_clock" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_volume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/selector_btn"
+            android:text="小米音量"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_pie" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/selector_btn"
+            android:text="ViewPager的使用复习"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_volume" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

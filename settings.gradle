@@ -1,2 +1,6 @@
-include ':app'
 rootProject.name = "NewStart"
+include ':app'
+include ':javademo'
+include ':toolbardemo'
+include ':msdemo'
+include ':jetpack'

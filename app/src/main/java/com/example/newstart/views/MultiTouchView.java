@@ -63,8 +63,10 @@ public class MultiTouchView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
+
         int actionIndex = event.getActionIndex();
         switch (event.getActionMasked()) {
+
             case MotionEvent.ACTION_POINTER_DOWN:
                 if (event.getPointerId(actionIndex) == 1) {
                     Log.e(TAG,"onTouchEvent--> 第二根手指按下了");
@@ -72,6 +74,7 @@ public class MultiTouchView extends View {
                     mPointF.set(event.getX(), event.getY());
                 }
                 break;
+
             case MotionEvent.ACTION_MOVE:
                 try {
                     if (hasSecondPoint) {
@@ -83,15 +86,18 @@ public class MultiTouchView extends View {
                     hasSecondPoint = false;
                 }
                 break;
+
             case MotionEvent.ACTION_POINTER_UP:
                 if (event.getPointerId(actionIndex) == 1) {
                     hasSecondPoint = false;
                     Log.e(TAG,"onTouchEvent--> 第二根手指离开了");
                 }
                 break;
+
             case MotionEvent.ACTION_UP:
                 hasSecondPoint = false;
                 break;
+
             default:
                 break;
         }

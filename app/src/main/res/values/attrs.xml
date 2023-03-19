@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ScrollConstraintLayout">
+        <attr name="outside_width" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="HwClockView">
+        <attr name="timeTextSize" format="dimension" />
+        <attr name="timeTextColor" format="color|reference" />
+    </declare-styleable>
+
+</resources>

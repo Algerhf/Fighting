@@ -13,14 +13,17 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 
+/**
+ * Camera：仿小米时钟
+ */
 public class ClockViewGroup extends RelativeLayout {
 
-    private float mRotateX;
-    private float mRotateY;
-    private Matrix matrix = new Matrix();
+    private float  mRotateX;
+    private float  mRotateY;
+    private Matrix matrix  = new Matrix();
     private Camera mCamera = new Camera();
-    private int mCenterX;
-    private int mCenterY;
+    private int    mCenterX;
+    private int    mCenterY;
 
     private ObjectAnimator objectAnimator;
 

@@ -1,7 +1,9 @@
 package com.example.newstart;
 
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -32,6 +34,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.btn_multi_touch)
     AppCompatButton mBtnMultiTouch;
 
+    @BindView(R.id.btn_scroller)
+    AppCompatButton mBtnScroller;
+
     @BindView(R.id.btn_view_drag)
     AppCompatButton mBtn_view_drag;
 
@@ -40,6 +45,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.btn_anim)
     AppCompatButton mBtn_Anim;
+
+    @BindView(R.id.btn_hw_clock)
+    AppCompatButton mBtn_clock;
+
+    @BindView(R.id.btn_pie)
+    AppCompatButton mBtn_pie;
+
+    @BindView(R.id.btn_volume)
+    AppCompatButton mBtn_volume;
+
+    @BindView(R.id.btn_view_pager)
+    AppCompatButton mBtn_view_pager;
 
     @Override
     protected int getResId() {
@@ -58,9 +75,17 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mBtnCamera.setOnClickListener(this);
         mBtnEventConflict.setOnClickListener(this);
         mBtnMultiTouch.setOnClickListener(this);
+        mBtnScroller.setOnClickListener(this);
         mBtn_view_drag.setOnClickListener(this);
         mBtn_Recycler_view.setOnClickListener(this);
         mBtn_Anim.setOnClickListener(this);
+        mBtn_clock.setOnClickListener(this);
+        mBtn_pie.setOnClickListener(this);
+        mBtn_volume.setOnClickListener(this);
+        mBtn_view_pager.setOnClickListener(this);
+
+
+
     }
 
     @Override
@@ -87,6 +112,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.btn_multi_touch:
                 startActivity(new Intent(MainActivity.this, MultyTouchActivity.class));
                 break;
+            case R.id.btn_scroller:
+                ScrollerActivity.actionStart(mContext);
+                break;
             case R.id.btn_view_drag:
                 startActivity(new Intent(MainActivity.this, ViewDragActivity.class));
                 break;
@@ -96,6 +124,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.btn_anim:
                 AnimActivity.actionStart(mContext);
                 break;
+            case R.id.btn_hw_clock:
+                HwClockActivity.actionStart(mContext);
+                break;
+            case R.id.btn_pie:
+                PieActivity.actionStart(mContext);
+                break;
+            case R.id.btn_volume:
+                VolumeActivity.actionStart(mContext);
+                break;
+
+            case R.id.btn_view_pager:
+                ViewPagerActivity.actionStart(mContext);
             default:
                 break;
         }

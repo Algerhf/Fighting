@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:gravity="center"
+        android:text="苹果"
+        android:textSize="18sp"
+        android:padding="15dp"
+        android:id="@+id/tv_apple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:text="香蕉"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tv_banana"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_apple"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:gravity="center"
+        android:text="橘子"
+        android:textSize="18sp"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tv_orange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_banana"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
