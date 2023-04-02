@@ -3,14 +3,14 @@ package com.example.jetpack.viewmodel
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.jetpack.databinding.ActivityStepFourBinding
+import com.example.jetpack.databinding.ActivityViewModel1Binding
 
-class StepFourActivity : AppCompatActivity() {
+class ViewModel1Activity : AppCompatActivity() {
 
     private val mModel: MyViewModel by viewModels()
 
     private val mBinding by lazy {
-        ActivityStepFourBinding.inflate(layoutInflater)
+        ActivityViewModel1Binding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

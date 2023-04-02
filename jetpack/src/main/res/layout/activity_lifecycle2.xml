@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".lifecycle.StepOneActivity">
+        tools:context=".lifecycle.Lifecycler1Activity">
 
         <com.example.jetpack.lifecycle.MyChronometer
             android:id="@+id/chronometer"

@@ -1,14 +1,14 @@
 package com.example.jetpack.lifecycle
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
-import com.example.jetpack.databinding.ActivityStepOneBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.example.jetpack.databinding.ActivityLifecycle1Binding
 
-class StepOneActivity : AppCompatActivity() {
+class Lifecycle1Activity : AppCompatActivity() {
 
     private val mBinding by lazy {
-        ActivityStepOneBinding.inflate(layoutInflater)
+        ActivityLifecycle1Binding.inflate(layoutInflater)
     }
 
     private var mElapsedTime = 0L

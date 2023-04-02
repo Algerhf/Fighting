@@ -2,12 +2,12 @@ package com.example.jetpack.lifecycle
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.jetpack.databinding.ActivityStepTwoBinding
+import com.example.jetpack.databinding.ActivityLifecycle2Binding
 
-class StepTwoActivity : AppCompatActivity() {
+class Lifecycle2Activity : AppCompatActivity() {
 
     private val mBinding by lazy {
-        ActivityStepTwoBinding.inflate(layoutInflater)
+        ActivityLifecycle2Binding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

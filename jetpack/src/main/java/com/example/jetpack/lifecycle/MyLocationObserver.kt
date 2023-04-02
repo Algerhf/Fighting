@@ -12,7 +12,7 @@ import androidx.core.location.LocationListenerCompat
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 
-class MyLocationObserver(val context: Context) : DefaultLifecycleObserver {
+class MyLocationObserver(private val context: Context) : DefaultLifecycleObserver {
 
     companion object {
         var TAG: String = MyLocationObserver::class.java.simpleName
@@ -36,7 +36,12 @@ class MyLocationObserver(val context: Context) : DefaultLifecycleObserver {
         ) {
             return
         }
-        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,1000L,1f,mMyLocationListener)
+        mLocationManager.requestLocationUpdates(
+            LocationManager.GPS_PROVIDER,
+            1000L,
+            1f,
+            mMyLocationListener
+        )
     }
 
     override fun onDestroy(owner: LifecycleOwner) {

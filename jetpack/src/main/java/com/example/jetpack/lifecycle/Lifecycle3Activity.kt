@@ -7,18 +7,16 @@ import android.content.ServiceConnection
 import android.os.Bundle
 import android.os.IBinder
 import androidx.appcompat.app.AppCompatActivity
-import com.example.jetpack.databinding.ActivityStepThreeBinding
+import com.example.jetpack.databinding.ActivityLifecycle3Binding
 
-class StepThreeActivity : AppCompatActivity() {
+class Lifecycle3Activity : AppCompatActivity() {
 
-    // private val mViewModel by viewModels(ThreeViewModel::class.java)
-
-    private val mBinding by lazy{
-        ActivityStepThreeBinding.inflate(layoutInflater)
+    private val mBinding by lazy {
+        ActivityLifecycle3Binding.inflate(layoutInflater)
     }
 
-    private val mConn by lazy{
-        object: ServiceConnection{
+    private val mConn by lazy {
+        object : ServiceConnection {
             override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
 
             }
@@ -26,7 +24,6 @@ class StepThreeActivity : AppCompatActivity() {
             override fun onServiceDisconnected(name: ComponentName?) {
 
             }
-
         }
     }
 
@@ -35,7 +32,11 @@ class StepThreeActivity : AppCompatActivity() {
         setContentView(mBinding.root)
 
         mBinding.btnStart.setOnClickListener {
-            bindService(Intent(this,MyLocationService::class.java),mConn,Context.BIND_AUTO_CREATE);
+            bindService(
+                Intent(this, MyLocationService::class.java),
+                mConn,
+                Context.BIND_AUTO_CREATE
+            );
         }
 
         mBinding.btnStop.setOnClickListener {

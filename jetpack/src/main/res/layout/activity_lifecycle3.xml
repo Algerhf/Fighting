@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:context=".lifecycle.StepThreeActivity">
+        tools:context=".lifecycle.Lifecycle3Activity">
 
         <androidx.appcompat.widget.AppCompatButton
             android:textAllCaps="false"

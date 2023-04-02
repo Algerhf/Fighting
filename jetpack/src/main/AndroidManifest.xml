@@ -4,16 +4,21 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".lifecycle.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewStart">
+        <activity android:name=".databinding.DataBinding3Activity" />
+        <activity android:name=".databinding.DataBinding2Activity" />
+
         <activity
-            android:name=".viewmodel.StepFourActivity"
+            android:name=".databinding.DataBinding1Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,13 +26,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".lifecycle.StepThreeActivity"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".lifecycle.StepTwoActivity"/>
+        <activity android:name=".livedata.LiveData2Activity" />
+        <activity android:name=".livedata.LiveData1Activity" />
+        <activity android:name=".viewmodel.ViewModel1Activity" />
+        <activity android:name=".lifecycle.Lifecycle3Activity" />
+        <activity android:name=".lifecycle.Lifecycle2Activity" />
+        <activity android:name=".lifecycle.Lifecycle1Activity" />
 
         <service android:name=".lifecycle.MyLocationService" />
     </application>

@@ -7,7 +7,7 @@ import android.widget.Chronometer
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 
-class MyChronometer:Chronometer,DefaultLifecycleObserver {
+class MyChronometer : Chronometer, DefaultLifecycleObserver {
 
     private var mElapsedTime = 0L
 
