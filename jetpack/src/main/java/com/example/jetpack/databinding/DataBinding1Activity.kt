@@ -13,6 +13,7 @@ class DataBinding1Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(mBinding.root)
-        mBinding.idol = Idol(R.mipmap.ic_wyb,"王一博","五星")
+        mBinding.idol = Idol(R.mipmap.ic_wyb,"王一博",5)
+        mBinding.eventHandle = EventHandle()
     }
 }

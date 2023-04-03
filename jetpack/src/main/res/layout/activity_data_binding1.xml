@@ -8,6 +8,12 @@
         <variable
             name="idol"
             type="com.example.jetpack.databinding.Idol" />
+
+        <variable
+            name="eventHandle"
+            type="com.example.jetpack.databinding.EventHandle" />
+
+        <import type="com.example.jetpack.databinding.StarUtils"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,12 +50,25 @@
             android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:text="@{idol.star}"
+            android:text="@{StarUtils.getStart(idol.star)}"
             tools:text="五星"
             android:id="@+id/start"
             android:layout_marginTop="30dp"
             android:textSize="30sp"
             app:layout_constraintTop_toBottomOf="@+id/name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:onClick="@{eventHandle.clickLike}"
+            android:textSize="20sp"
+            android:text="喜欢"
+            android:textColor="#ffffff"
+            android:background="#890000ff"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/start"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_width="wrap_content"
