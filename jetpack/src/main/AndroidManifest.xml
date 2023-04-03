@@ -14,20 +14,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewStart">
-
         <activity
-            android:name=".databinding.DataBinding4Activity"
-            android:exported="true" >
+            android:name=".databinding.DataBinding6Activity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".databinding.DataBinding5Activity" />
+        <activity android:name=".databinding.DataBinding4Activity" />
         <activity android:name=".databinding.DataBinding3Activity" />
         <activity android:name=".databinding.DataBinding2Activity" />
-        <activity android:name=".databinding.DataBinding1Activity"/>
+        <activity android:name=".databinding.DataBinding1Activity" />
         <activity android:name=".livedata.LiveData2Activity" />
         <activity android:name=".livedata.LiveData1Activity" />
         <activity android:name=".viewmodel.ViewModel1Activity" />
