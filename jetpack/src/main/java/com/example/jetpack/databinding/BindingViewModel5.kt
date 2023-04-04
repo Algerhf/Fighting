@@ -10,6 +10,6 @@ import androidx.lifecycle.ViewModel
  * 描述：
  *
  */
-class BindingViewModel5(val user: User) : ViewModel() {
+class BindingViewModel5(val user: User){
     val userName = ObservableField<String>(user.userName)
 }

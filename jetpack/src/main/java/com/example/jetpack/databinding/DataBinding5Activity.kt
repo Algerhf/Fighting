@@ -13,7 +13,16 @@ class DataBinding5Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(mBinding.root)
-        mBinding.model = BindingViewModel5(User("wangyibo"))
+        val viewModel = BindingViewModel5(User("wangyibo"))
+        mBinding.model = viewModel
+
+        mBinding.button.setOnClickListener {
+            if("wangyibo" == viewModel.userName.get()){
+                viewModel.userName.set("baibing")
+            }else{
+                viewModel.userName.set("wangyibo")
+            }
+        }
     }
 
 }

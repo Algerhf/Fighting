@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewStart">
         <activity
-            android:name=".databinding.DataBinding6Activity"
+            android:name=".databinding.DataBinding5Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".databinding.DataBinding5Activity" />
+        <activity android:name=".databinding.DataBinding6Activity" />
         <activity android:name=".databinding.DataBinding4Activity" />
         <activity android:name=".databinding.DataBinding3Activity" />
         <activity android:name=".databinding.DataBinding2Activity" />
