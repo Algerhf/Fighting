@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.jetpack.databinding.BindingViewModel7" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".databinding.DataBinding7Activity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_a_team"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_b_team"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_b_team"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/tv_a_team"
+            app:layout_constraintTop_toTopOf="@id/tv_a_team"
+            tools:text="0" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_a1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_btn"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="+1"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_add_b1"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_a_team" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginHorizontal="20dp"
+            android:id="@+id/btn_add_b1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_btn"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="+1"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/btn_add_a1"
+            app:layout_constraintTop_toTopOf="@+id/btn_add_a1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_a2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_btn"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="+1"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_add_b1"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@+id/btn_add_a1"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add_a1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginHorizontal="20dp"
+            android:id="@+id/btn_add_b2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_btn"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="+1"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/btn_add_a2"
+            app:layout_constraintTop_toTopOf="@+id/btn_add_a2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

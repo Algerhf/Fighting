@@ -1,11 +1,5 @@
 package com.example.jetpack.databinding
 
-class IdolUtils {
-
-    companion object{
-        @JvmStatic
-        fun getIdols(){
-
-        }
-    }
+fun getIdols() = MutableList(20) {
+   Idol( -1,"item $it",it)
 }
