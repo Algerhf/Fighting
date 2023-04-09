@@ -14,8 +14,8 @@ class BindingViewModel7 : ViewModel() {
 
     val aTeamScore = MutableLiveData(0)
     val bTeamScore = MutableLiveData(0)
-    var mLastATeamScore = 0
-    var mLastBTeamScore = 0
+    private var mLastATeamScore = 0
+    private var mLastBTeamScore = 0
 
     fun addATeamScore(score: Int) {
         saveLastScore()
@@ -41,7 +41,7 @@ class BindingViewModel7 : ViewModel() {
 
     private fun saveLastScore() {
         mLastATeamScore = aTeamScore.value ?: 0
-        mLastBTeamScore = aTeamScore.value ?: 0
+        mLastBTeamScore = bTeamScore.value ?: 0
     }
 
 }

@@ -17,5 +17,6 @@ class DataBinding7Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(mBinding.root)
         mBinding.model = mModel
+        mBinding.lifecycleOwner = this
     }
 }
