@@ -16,7 +16,7 @@
         android:theme="@style/Theme.NewStart">
 
         <activity
-            android:name=".databinding.DataBinding7Activity"
+            android:name=".room.Room1Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".databinding.DataBinding7Activity" />
         <activity android:name=".databinding.DataBinding6Activity" />
         <activity android:name=".databinding.DataBinding5Activity" />
         <activity android:name=".databinding.DataBinding4Activity" />
