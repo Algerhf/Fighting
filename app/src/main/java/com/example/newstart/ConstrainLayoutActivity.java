@@ -2,8 +2,11 @@ package com.example.newstart;
 
 import android.content.Context;
 import android.content.Intent;
+import android.view.View;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.example.newstart.views.GradientImageView;
 
 public class ConstrainLayoutActivity extends BaseActivity {
 
@@ -15,7 +18,6 @@ public class ConstrainLayoutActivity extends BaseActivity {
     @Override
     public void initView() {
         super.initView();
-
         /**
          * 一、定位
          *   1.1 相对定位

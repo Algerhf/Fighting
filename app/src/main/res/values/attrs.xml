@@ -9,4 +9,17 @@
         <attr name="timeTextColor" format="color|reference" />
     </declare-styleable>
 
+    <declare-styleable name="GradientImageView">
+        <attr name="gradient_bg" format="reference"/>
+        <attr name="gradient_bg_width" format="reference|dimension"/>
+        <attr name="gradient_bg_height" format="reference|dimension"/>
+
+        <attr name="gradient_src" format="reference"/>
+        <attr name="gradient_src_width" format="reference|dimension"/>
+        <attr name="gradient_src_height" format="reference|dimension"/>
+        <attr name="gradient_src_selected" format="reference"/>
+        <attr name="gradient_src_selected_width" format="reference|dimension"/>
+        <attr name="gradient_src_selected_height" format="reference|dimension"/>
+    </declare-styleable>
+
 </resources>
