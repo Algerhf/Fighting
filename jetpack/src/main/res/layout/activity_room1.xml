@@ -62,12 +62,12 @@
             app:layout_constraintTop_toBottomOf="@+id/btn_add" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_query"
+            android:id="@+id/btn_delete_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/bg_btn"
-            android:text="查询"
+            android:text="清空"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
