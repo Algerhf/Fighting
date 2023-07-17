@@ -10,5 +10,6 @@ class MyApplication : Application() {
         super.onCreate()
         ProcessLifecycleOwner.get().lifecycle.addObserver(ApplicationObserver())
         DatabaseManager.setApplication(this)
+        DatabaseManager.mDb.isOpen
     }
 }

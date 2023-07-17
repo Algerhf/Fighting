@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="java.util.List"/>
+        <import type="java.util.Set"/>
+        <import type="java.util.Map"/>
+        <import type="android.util.SparseArray"/>
+        <variable
+            name="flag"
+            type="boolean" />
+        
+        <variable
+            name="array"
+            type="String[]" />
+        <variable
+            name="list"
+            type="List&lt;String&gt;" />
+        <variable
+            name="set"
+            type="Set&lt;String&gt;" />
+        <variable
+            name="map"
+            type="Map&lt;String,String&gt;" />
+        <variable
+            name="sparse"
+            type="SparseArray&lt;String&gt;" />
+        <variable
+            name="index"
+            type="int" />
+        <variable
+            name="key"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            tools:text="@{map[key]}"
+            android:text='@{@string/format("zhangsan","lisi")}'
+            android:paddingHorizontal="@{flag?@dimen/paddingSmall:@dimen/paddingLarge}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

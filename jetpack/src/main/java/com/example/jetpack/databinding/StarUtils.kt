@@ -12,7 +12,7 @@ class StarUtils {
     companion object {
 
         @JvmStatic
-        fun getStart(star: Int): String {
+        fun getStar(star: Int): String {
             return when (star) {
                 1 -> "一星"
                 2 -> "二星"

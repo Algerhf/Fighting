@@ -27,4 +27,7 @@ class Student @Ignore constructor(
         this.id = id
     }
 
+    override fun toString(): String {
+        return "Student(name='$name', age=$age, id=$id)"
+    }
 }

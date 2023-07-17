@@ -19,7 +19,7 @@ class Room1Activity : AppCompatActivity() {
     }
 
     private val mAdapter: StudentAdapter by lazy {
-        StudentAdapter(mList)
+        StudentAdapter(this@Room1Activity, mList)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,11 +47,15 @@ class Room1Activity : AppCompatActivity() {
         }
 
         mBinding.btnDelete.setOnClickListener {
-            mViewModel.delete(Student("张三"))
+            mViewModel.delete(Student(58,"张三",0))
         }
 
         mBinding.btnUpdate.setOnClickListener {
-            mViewModel.update(Student("老六", 20))
+            val stu = Student()
+            stu.id = 60
+            stu.name = "老六"
+            stu.age = 20
+            mViewModel.update(stu)
         }
 
         mBinding.btnDeleteAll.setOnClickListener {
