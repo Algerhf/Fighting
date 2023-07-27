@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
             NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
+            // Android 8.0 及以上需要使用 NotificationChannel
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, "消息提醒", NotificationManager.IMPORTANCE_HIGH);
                 notificationManager.createNotificationChannel(notificationChannel);

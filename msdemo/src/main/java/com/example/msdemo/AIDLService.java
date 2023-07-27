@@ -17,13 +17,13 @@ public class AIDLService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        return iBinder;
     }
 
     MyInterface.Stub iBinder = new MyInterface.Stub() {
         @Override
         public int add(int v1, int v2) throws RemoteException {
-            return v1+v2;
+            return v1 + v2;
         }
     };
 }

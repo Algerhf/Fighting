@@ -1,18 +1,17 @@
 package com.example.toolbardemo;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.palette.graphics.Palette;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.palette.graphics.Palette;
+
+import java.util.List;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,35 +30,33 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(android.R.drawable.ic_menu_view);
 
-        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.action_share:
-                        Toast.makeText(MainActivity.this,"Share",Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.action_settings:
-                        Toast.makeText(MainActivity.this,"Settings",Toast.LENGTH_SHORT).show();
-                        break;
-                    default:
-                        break;
-                }
-                return true;
+        mToolbar.setOnMenuItemClickListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.action_share:
+                    Toast.makeText(MainActivity.this, "Share", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.action_settings:
+                    Toast.makeText(MainActivity.this, "Settings", Toast.LENGTH_SHORT).show();
+                    break;
+                default:
+                    break;
             }
+            return true;
         });
 
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.test);
         Palette.from(bitmap).generate(palette -> {
             assert palette != null;
-            Palette.Swatch vibrantSwatch = palette.getVibrantSwatch();
-            assert vibrantSwatch != null;
-            Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(vibrantSwatch.getRgb()));
+            List<Palette.Swatch> swatches = palette.getSwatches();
+            if (swatches.size() > 0) {
+                Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(swatches.get(0).getRgb()));
+            }
         });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main,menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 }
