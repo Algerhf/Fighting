@@ -1,6 +1,7 @@
 package com.example.kotlin
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import com.example.kotlin.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
@@ -26,6 +27,8 @@ class MainActivity : ComponentActivity() {
         scope.launch(Dispatchers.Main){
             
         }
+
+        Log.d(TAG,"test shelve")
     }
     
     private suspend fun obtainCacheData(){
