@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">eat</string>
+
+    <string-array name="vegetable">
+        <item>酸辣土豆丝</item>
+        <item>炒娃娃菜</item>
+        <item>红烧茄子</item>
+        <item>韭菜炒鸡蛋</item>
+        <item>炒藕丁</item>
+    </string-array>
+
+    <string-array name="meat">
+        <item>土豆炖鸡</item>
+        <item>土豆炖鸭</item>
+        <item>红烧肉</item>
+        <item>韭菜炒鸡蛋</item>
+        <item>炒藕丁</item>
+    </string-array>
+</resources>
