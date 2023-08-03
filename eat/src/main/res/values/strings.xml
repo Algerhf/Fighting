@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">eat</string>
+    <string name="app_name">黄翠食谱</string>
 
     <string-array name="vegetable">
         <item>酸辣土豆丝</item>
@@ -7,13 +7,47 @@
         <item>红烧茄子</item>
         <item>韭菜炒鸡蛋</item>
         <item>炒藕丁</item>
+        <item>麻婆豆腐</item>
+        <item>炒包菜</item>
+        <item>西红柿炒鸡蛋</item>
+        <item>炒花菜</item>
+        <item>炒豆子</item>
+        <item>炒莴笋</item>
+        <item>炒腐竹</item>
+        <item>炒豆皮</item>
+        <item>炒四季豆</item>
+        <item>煎豆腐</item>
+        <item>炒海带</item>
+        <item>凉拌黄瓜</item>
+        <item>炒白胶</item>
+        <item>炒南瓜</item>
+        <item>火腿炒黄瓜</item>
+        <item>虎皮尖椒</item>
+        <item>炒胡萝卜丝</item>
+        <item>炒豆芽</item>
+        <item>炒香干</item>
+        <item>清炒冬瓜</item>
+        <item>鱼香肉丝</item>
     </string-array>
 
     <string-array name="meat">
         <item>土豆炖鸡</item>
         <item>土豆炖鸭</item>
         <item>红烧肉</item>
-        <item>韭菜炒鸡蛋</item>
-        <item>炒藕丁</item>
+        <item>手撕柠檬鸡</item>
+        <item>可乐鸡翅</item>
+        <item>蒜香鸡爪</item>
+        <item>辣椒炒肉</item>
+        <item>芹菜炒牛肉</item>
+        <item>宫保鸡丁</item>
+        <item>香菇炒肉</item>
+        <item>土豆烧排骨</item>
+        <item>爆炒鸡胗</item>
+        <item>红烧鱼</item>
+        <item>红烧鱿鱼</item>
+        <item>芹菜炒肉</item>
+        <item>爆炒猪肝</item>
+        <item>黄焖鸡</item>
+        <item>啤酒鸭</item>
     </string-array>
 </resources>

@@ -20,6 +20,9 @@ class MainActivity : ComponentActivity() {
 
         loadData()
 
+        mBinding.tvVegetableTitle.text = "素菜 (${vegetableList.size}道)"
+        mBinding.tvMeatTitle.text = "荤菜 (${meatList.size}道)"
+
         mBinding.btnVegetableStart.setOnClickListener {
             random = !random
             mBinding.btnVegetableStart.text = if (random) "停止" else "开始"
