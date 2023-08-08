@@ -76,7 +76,6 @@ class MainActivity : ComponentActivity() {
         private val TAG = MainActivity::class.java.simpleName
     }
 
-    // 这是第一次提交 测试
-    // 这是第三次提交 测试
+    // 这是第一次
 
 }
