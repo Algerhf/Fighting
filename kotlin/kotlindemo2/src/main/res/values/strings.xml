@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">KotlinDemo2</string>
+    <string name="name">%1$s 你好</string>
+</resources>
