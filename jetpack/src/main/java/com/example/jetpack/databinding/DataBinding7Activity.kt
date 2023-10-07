@@ -3,7 +3,6 @@ package com.example.jetpack.databinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.example.jetpack.R
 
 class DataBinding7Activity : AppCompatActivity() {
 

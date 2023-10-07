@@ -3,7 +3,6 @@ package com.example.jetpack.databinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.jetpack.R
 
 class DataBinding6Activity : AppCompatActivity() {
 

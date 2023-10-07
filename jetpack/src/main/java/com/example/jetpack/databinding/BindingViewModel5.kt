@@ -1,7 +1,6 @@
 package com.example.jetpack.databinding
 
 import androidx.databinding.ObservableField
-import androidx.lifecycle.ViewModel
 
 /**
  *
@@ -10,6 +9,6 @@ import androidx.lifecycle.ViewModel
  * 描述：
  *
  */
-class BindingViewModel5(val user: User){
+class BindingViewModel5(user: User){
     val userName = ObservableField<String>(user.userName)
 }

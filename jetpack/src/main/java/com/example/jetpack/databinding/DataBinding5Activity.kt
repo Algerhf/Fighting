@@ -2,7 +2,6 @@ package com.example.jetpack.databinding
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.jetpack.R
 
 class DataBinding5Activity : AppCompatActivity() {
 
