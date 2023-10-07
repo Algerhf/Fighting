@@ -2,6 +2,8 @@ package com.example.jetpack.room
 
 import android.app.Application
 import androidx.room.Room
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 
 /**
  *
@@ -10,12 +12,21 @@ import androidx.room.Room
  * 描述：
  *
  */
-object DatabaseManager {
+class DatabaseManager private constructor() {
 
     private lateinit var mApplication: Application
 
     val mDb: MyDataBase by lazy {
-        Room.databaseBuilder(mApplication, MyDataBase::class.java, "my_db.db").allowMainThreadQueries().build()
+        Room.databaseBuilder(mApplication, MyDataBase::class.java, "my_db.db")
+            .allowMainThreadQueries()
+            .addMigrations()
+            .build()
+    }
+
+    companion object {
+        val instance: DatabaseManager by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+            DatabaseManager()
+        }
     }
 
     fun setApplication(application: Application) {

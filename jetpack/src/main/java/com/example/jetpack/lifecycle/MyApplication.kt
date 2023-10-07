@@ -9,7 +9,7 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         ProcessLifecycleOwner.get().lifecycle.addObserver(ApplicationObserver())
-        DatabaseManager.setApplication(this)
-        DatabaseManager.mDb.isOpen
+        DatabaseManager.instance.setApplication(this)
+        DatabaseManager.instance.mDb.isOpen
     }
 }
