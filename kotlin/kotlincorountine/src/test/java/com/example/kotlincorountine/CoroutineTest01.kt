@@ -1,4 +1,4 @@
-package com.example.kotlincoroutine
+package com.example.kotlincorountine
 
 import kotlinx.coroutines.*
 import org.junit.Test
@@ -13,14 +13,13 @@ class CoroutineTest01 {
     @Test
     fun `test_coroutine_Builder`() = runBlocking {
         val job1 = launch {
-            delay(2000)
+            delay(200)
             println("job1 finished")
         }
 
         val job2 = async {
-            delay(2000)
+            delay(200)
             println("job2 finished")
-            "job2 result"
         }
 
         println(job2.await())
@@ -104,18 +103,10 @@ class CoroutineTest01 {
 
     @Test
     fun `test_start_mode`() = runBlocking {
-        val time = measureTimeMillis {
-            val one = async { doOne() }
-            val two = async { doTwo() }
-            println("result:${one.await() + two.await()}")
-
-            // 这种方式跟test_coroutine_sync方法差不多，错误用法
-//            val one = async { doOne() }.await()
-//            val two = async { doTwo() }.await()
-//            println("result:${one + two}")
+        val job = launch(start = CoroutineStart.DEFAULT) {
+            delay(10000)
+            println("job finished")
         }
-
-        println("cost time $time ms")
     }
 
     fun `test_user`() = runBlocking<Unit>{
