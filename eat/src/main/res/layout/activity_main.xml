@@ -40,10 +40,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:layout_marginTop="60dp"
             android:id="@+id/tv_vegetable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
             android:textColor="@color/purple_500"
             android:textSize="28sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +63,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_vegetable" />
 
+        <Button
+            android:id="@+id/btn_import_veg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_button"
+            android:text="导入"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_vegetable_start" />
+
         <TextView
             android:id="@+id/tv_meat_title"
             android:layout_width="wrap_content"
@@ -75,10 +87,10 @@
             app:layout_constraintTop_toBottomOf="@+id/gl_line2" />
 
         <TextView
-            android:layout_marginTop="60dp"
             android:id="@+id/tv_meat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
             android:textColor="@color/purple_500"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -97,6 +109,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_meat" />
+
+        <Button
+            android:id="@+id/btn_import_meat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_button"
+            android:text="导入"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_meat_start" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

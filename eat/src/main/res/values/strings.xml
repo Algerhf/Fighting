@@ -50,4 +50,15 @@
         <item>黄焖鸡</item>
         <item>啤酒鸭</item>
     </string-array>
+
+    <string name="splash_desc">唯爱与美食不可辜负</string>
+    <string name="add_new">新增</string>
+    <string name="please_input_food_name">请输入菜名</string>
+    <string name="food_exist">该菜品已存在</string>
+    <string name="add_food_success">添加成功</string>
+    <string name="no_vegetable">没有素菜</string>
+    <string name="no_meat">没有荤菜</string>
+    <string name="delete_title">确认删除%1$s？</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
 </resources>
