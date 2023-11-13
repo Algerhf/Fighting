@@ -52,6 +52,7 @@
     </string-array>
 
     <string name="splash_desc">唯爱与美食不可辜负</string>
+    <string name="click_enter">点击进入</string>
     <string name="add_new">新增</string>
     <string name="please_input_food_name">请输入菜名</string>
     <string name="food_exist">该菜品已存在</string>

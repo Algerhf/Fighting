@@ -25,14 +25,40 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(mBinding.root)
-
-        val hasImportVeg = SpUtils.getBoolean(KEY_IMPORT_VEGETABLE,false)
-        mBinding.btnImportVeg.visibility = if(hasImportVeg) View.GONE else View.VISIBLE
-
-        val hasImportMeat = SpUtils.getBoolean(KEY_IMPORT_MEAT,false)
-        mBinding.btnImportMeat.visibility = if(hasImportMeat) View.GONE else View.VISIBLE
         addListener()
         addObserver()
+
+        val hasImportVeg = SpUtils.getBoolean(KEY_IMPORT_VEGETABLE,false)
+        if(!hasImportVeg){
+            val array = resources.getStringArray(R.array.vegetable)
+            val list = array.map {
+                Food(it, FoodType.VEGETABLE)
+            }
+            mViewModel.insert(*list.toTypedArray())
+
+            SpUtils.putBoolean(KEY_IMPORT_VEGETABLE,true)
+
+            lifecycleScope.launch {
+                delay(1000)
+                mViewModel.queryAllVegetable()
+            }
+        }
+
+        val hasImportMeat = SpUtils.getBoolean(KEY_IMPORT_MEAT,false)
+        if(!hasImportMeat){
+            val array = resources.getStringArray(R.array.meat)
+            val list = array.map {
+                Food(it, FoodType.MEAT)
+            }
+            mViewModel.insert(*list.toTypedArray())
+
+            SpUtils.putBoolean(KEY_IMPORT_MEAT,true)
+
+            lifecycleScope.launch {
+                delay(1000)
+                mViewModel.queryAllMeat()
+            }
+        }
     }
 
     override fun onResume() {
@@ -78,38 +104,6 @@ class MainActivity : ComponentActivity() {
 
         mBinding.tvMeatTitle.setOnClickListener {
             FoodListActivity.startActivityAction(this@MainActivity, FoodType.MEAT)
-        }
-
-        mBinding.btnImportVeg.setOnClickListener {
-            val array = resources.getStringArray(R.array.vegetable)
-            val list = array.map {
-                Food(it, FoodType.VEGETABLE)
-            }
-            mViewModel.insert(*list.toTypedArray())
-
-            SpUtils.putBoolean(KEY_IMPORT_VEGETABLE,true)
-            mBinding.btnImportVeg.visibility = View.GONE
-
-            lifecycleScope.launch {
-                delay(1500)
-                mViewModel.queryAllVegetable()
-            }
-        }
-
-        mBinding.btnImportMeat.setOnClickListener {
-            val array = resources.getStringArray(R.array.meat)
-            val list = array.map {
-                Food(it, FoodType.MEAT)
-            }
-            mViewModel.insert(*list.toTypedArray())
-
-            SpUtils.putBoolean(KEY_IMPORT_MEAT,true)
-            mBinding.btnImportMeat.visibility = View.GONE
-
-            lifecycleScope.launch {
-                delay(1500)
-                mViewModel.queryAllMeat()
-            }
         }
     }
 

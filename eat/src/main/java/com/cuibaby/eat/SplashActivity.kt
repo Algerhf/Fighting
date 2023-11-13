@@ -2,7 +2,6 @@ package com.cuibaby.eat
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -40,6 +39,7 @@ class SplashActivity : AppCompatActivity() {
 //        mBinding.sv.resume()
         mBinding.sv.setOnClickListener {
             startActivity(Intent(this@SplashActivity,MainActivity::class.java))
+            finish()
         }
     }
 }
