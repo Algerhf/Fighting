@@ -1,7 +1,6 @@
 package com.cuibaby.eat
 
 import android.os.Bundle
-import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -24,41 +23,11 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        StatusBarHelper.initStatusBar(this)
         setContentView(mBinding.root)
         addListener()
         addObserver()
-
-        val hasImportVeg = SpUtils.getBoolean(KEY_IMPORT_VEGETABLE,false)
-        if(!hasImportVeg){
-            val array = resources.getStringArray(R.array.vegetable)
-            val list = array.map {
-                Food(it, FoodType.VEGETABLE)
-            }
-            mViewModel.insert(*list.toTypedArray())
-
-            SpUtils.putBoolean(KEY_IMPORT_VEGETABLE,true)
-
-            lifecycleScope.launch {
-                delay(1000)
-                mViewModel.queryAllVegetable()
-            }
-        }
-
-        val hasImportMeat = SpUtils.getBoolean(KEY_IMPORT_MEAT,false)
-        if(!hasImportMeat){
-            val array = resources.getStringArray(R.array.meat)
-            val list = array.map {
-                Food(it, FoodType.MEAT)
-            }
-            mViewModel.insert(*list.toTypedArray())
-
-            SpUtils.putBoolean(KEY_IMPORT_MEAT,true)
-
-            lifecycleScope.launch {
-                delay(1000)
-                mViewModel.queryAllMeat()
-            }
-        }
+        importData()
     }
 
     override fun onResume() {
@@ -70,13 +39,15 @@ class MainActivity : ComponentActivity() {
     private fun addObserver() {
         mViewModel.mVegetableLiveData.observe(this) {
             it?.let { list ->
-                mBinding.tvVegetableTitle.text = "素菜 (${list.size}道)"
+                mBinding.tvVegetable.text = ""
+                mBinding.tvVegetableTitle.text = getString(R.string.vegetable_number, list.size)
             }
         }
 
         mViewModel.mMeatLiveData.observe(this) {
             it?.let { list ->
-                mBinding.tvMeatTitle.text = "荤菜 (${list.size}道)"
+                mBinding.tvMeat.text = ""
+                mBinding.tvMeatTitle.text = getString(R.string.meat_number, list.size)
             }
         }
     }
@@ -84,7 +55,8 @@ class MainActivity : ComponentActivity() {
     private fun addListener() {
         mBinding.btnVegetableStart.setOnClickListener {
             random = !random
-            mBinding.btnVegetableStart.text = if (random) "停止" else "开始"
+            mBinding.btnVegetableStart.text =
+                if (random) getString(R.string.stop) else getString(R.string.start)
             if (random) {
                 startVegetable()
             }
@@ -92,7 +64,8 @@ class MainActivity : ComponentActivity() {
 
         mBinding.btnMeatStart.setOnClickListener {
             meatRandom = !meatRandom
-            mBinding.btnMeatStart.text = if (meatRandom) "停止" else "开始"
+            mBinding.btnMeatStart.text =
+                if (meatRandom) getString(R.string.stop) else getString(R.string.start)
             if (meatRandom) {
                 startMeat()
             }
@@ -104,6 +77,40 @@ class MainActivity : ComponentActivity() {
 
         mBinding.tvMeatTitle.setOnClickListener {
             FoodListActivity.startActivityAction(this@MainActivity, FoodType.MEAT)
+        }
+    }
+
+    private fun importData() {
+        val hasImportVeg = SpUtils.getBoolean(KEY_IMPORT_VEGETABLE, false)
+        if (!hasImportVeg) {
+            val array = resources.getStringArray(R.array.vegetable)
+            val list = array.map {
+                Food(it, FoodType.VEGETABLE)
+            }
+            mViewModel.insert(*list.toTypedArray())
+
+            SpUtils.putBoolean(KEY_IMPORT_VEGETABLE, true)
+
+            lifecycleScope.launch {
+                delay(1000)
+                mViewModel.queryAllVegetable()
+            }
+        }
+
+        val hasImportMeat = SpUtils.getBoolean(KEY_IMPORT_MEAT, false)
+        if (!hasImportMeat) {
+            val array = resources.getStringArray(R.array.meat)
+            val list = array.map {
+                Food(it, FoodType.MEAT)
+            }
+            mViewModel.insert(*list.toTypedArray())
+
+            SpUtils.putBoolean(KEY_IMPORT_MEAT, true)
+
+            lifecycleScope.launch {
+                delay(1000)
+                mViewModel.queryAllMeat()
+            }
         }
     }
 
@@ -143,6 +150,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        random = false
+        meatRandom = false
+    }
 
     companion object {
         private val TAG = MainActivity::class.java.simpleName

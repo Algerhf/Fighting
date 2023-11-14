@@ -14,30 +14,30 @@ class StudentRepository {
 
     fun insert(vararg student: Student) {
         Executors.newCachedThreadPool().submit {
-            DatabaseManager.mDb.mStudentDao.insert(*student)
+            DatabaseManager.instance.mDb.mStudentDao.insert(*student)
         }
     }
 
     fun delete(vararg student: Student) {
         Executors.newCachedThreadPool().submit {
-            DatabaseManager.mDb.mStudentDao.delete(*student)
+            DatabaseManager.instance.mDb.mStudentDao.delete(*student)
         }
 
     }
 
     fun update(vararg student: Student) {
         Executors.newCachedThreadPool().submit {
-            DatabaseManager.mDb.mStudentDao.update(*student)
+            DatabaseManager.instance.mDb.mStudentDao.update(*student)
         }
     }
 
     fun deleteAll() {
         Executors.newCachedThreadPool().submit {
-            DatabaseManager.mDb.mStudentDao.deleteAll()
+            DatabaseManager.instance.mDb.mStudentDao.deleteAll()
         }
     }
 
     fun queryAll(): LiveData<List<Student>> {
-        return DatabaseManager.mDb.mStudentDao.queryAll()
+        return DatabaseManager.instance.mDb.mStudentDao.queryAll()
     }
 }

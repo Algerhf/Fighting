@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -27,6 +28,7 @@ class FoodListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        StatusBarHelper.initStatusBar(this)
         setContentView(mBinding.root)
 
         mFoodType = if (savedInstanceState == null) {
@@ -44,12 +46,15 @@ class FoodListActivity : AppCompatActivity() {
             override fun onDelete(view: View, position: Int, food: Food) {
                 AlertDialog.Builder(this@FoodListActivity)
                     .setTitle(getString(R.string.delete_title, food.name))
-                    .setPositiveButton(getString(R.string.confirm)
+                    .setPositiveButton(
+                        getString(R.string.confirm)
                     ) { dialog, _ ->
                         dialog.dismiss()
                         mViewModel.delete(food)
                         mAdapter.removeData(position)
-                    }.setNegativeButton(getString(R.string.cancel)
+                        showToast(R.string.delete_success)
+                    }.setNegativeButton(
+                        getString(R.string.cancel)
                     ) { dialog, _ ->
                         dialog.dismiss()
                     }.show()
@@ -65,6 +70,8 @@ class FoodListActivity : AppCompatActivity() {
         mViewModel.queryAll()
 
         mBinding.btnAdd.setOnClickListener {
+            hideSoftInput(this@FoodListActivity)
+
             val text = mBinding.etName.text.toString().trim()
             if (text.isEmpty()) {
                 showToast(R.string.please_input_food_name)
@@ -80,11 +87,16 @@ class FoodListActivity : AppCompatActivity() {
                     mViewModel.insert(food)
                     showToast(R.string.add_food_success)
                     mAdapter.addData(food)
+                    mBinding.recyclerView.smoothScrollToPosition(mAdapter.itemCount)
                 }
             }
         }
+    }
 
-
+    private fun hideSoftInput(context: Context) {
+        val inputMethodManager =
+            context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(mBinding.etName.windowToken, 0);
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
