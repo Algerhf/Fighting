@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment;
 import com.example.newstart.R;
 
 public class TestFragment extends Fragment {
-
     private AppCompatTextView mTv;
 
     @Override
@@ -25,7 +24,7 @@ public class TestFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         LayoutInflater layoutInflater = LayoutInflater.from(container.getContext());
-        View view = layoutInflater.inflate(R.layout.fragment_test,null,false);
+        View view = layoutInflater.inflate(R.layout.fragment_test, null, false);
         mTv = view.findViewById(R.id.tv);
         return view;
     }
@@ -35,7 +34,7 @@ public class TestFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         Bundle b = getArguments();
-        if(null!=b){
+        if (null != b) {
             String title = b.getString("title");
             mTv.setText(title);
         }

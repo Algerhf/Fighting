@@ -2,45 +2,29 @@ package com.example.newstart;
 
 import android.content.Context;
 import android.content.Intent;
-import android.view.View;
+import android.os.Bundle;
 
-import com.example.newstart.views.VolumeLayout;
-import com.example.newstart.views.VolumeView;
+import androidx.annotation.Nullable;
+
+import com.example.newstart.databinding.ActivityVolumeBinding;
 
 public class VolumeActivity extends BaseActivity {
-
-    private VolumeLayout mVolumeLayout;
-
-    @Override
-    protected int getResId() {
-        return R.layout.activity_volume;
-    }
+    private ActivityVolumeBinding mBinding;
 
     @Override
-    public void initView() {
-        super.initView();
-        mVolumeLayout = findViewById(R.id.volume_layout);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mBinding = ActivityVolumeBinding.inflate(getLayoutInflater());
+        setContentView(mBinding.getRoot());
+        addListener();
     }
 
-    @Override
-    public void initListener() {
-        super.initListener();
-        findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mVolumeLayout.volumeUp();
-            }
-        });
-
-        findViewById(R.id.btn2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mVolumeLayout.volumeDown();
-            }
-        });
+    private void addListener() {
+        mBinding.btn1.setOnClickListener(v -> mBinding.volumeLayout.volumeUp());
+        mBinding.btn2.setOnClickListener(v -> mBinding.volumeLayout.volumeDown());
     }
 
-    public static void actionStart(Context context){
-        context.startActivity(new Intent(context,VolumeActivity.class));
+    public static void actionStart(Context context) {
+        context.startActivity(new Intent(context, VolumeActivity.class));
     }
 }

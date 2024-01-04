@@ -2,23 +2,21 @@ package com.example.newstart;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 
-import com.example.newstart.views.HwClockView;
+import androidx.annotation.Nullable;
+
+import com.example.newstart.databinding.ActivityHwClockBinding;
 
 public class HwClockActivity extends BaseActivity {
-
-    private HwClockView mHwClockView;
-
-    @Override
-    protected int getResId() {
-        return R.layout.activity_hw_clock;
-    }
+    private ActivityHwClockBinding mBinding;
 
     @Override
-    public void initView() {
-        super.initView();
-        mHwClockView = findViewById(R.id.hw_clock);
-        mHwClockView.performAnimation();
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mBinding = ActivityHwClockBinding.inflate(getLayoutInflater());
+        setContentView(mBinding.getRoot());
+        mBinding.hwClock.post(() -> mBinding.hwClock.performAnimation());
     }
 
     public static void actionStart(Context context){

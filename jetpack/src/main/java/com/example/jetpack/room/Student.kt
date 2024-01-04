@@ -1,20 +1,18 @@
 package com.example.jetpack.room
 
 import androidx.room.ColumnInfo
-import androidx.room.ColumnInfo.INTEGER
-import androidx.room.ColumnInfo.TEXT
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "student")
 class Student @Ignore constructor(
-    @ColumnInfo(name = "name", typeAffinity = TEXT) var name: String,
-    @ColumnInfo(name = "age", typeAffinity = INTEGER) var age: Int
+    @ColumnInfo(name = "name", typeAffinity = ColumnInfo.TEXT) var name: String,
+    @ColumnInfo(name = "age", typeAffinity = ColumnInfo.INTEGER) var age: Int
 ) {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id", typeAffinity = INTEGER)
+    @ColumnInfo(name = "id", typeAffinity = ColumnInfo.INTEGER)
     var id: Int = 0
 
     @Ignore

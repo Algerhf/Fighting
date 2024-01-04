@@ -13,8 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.customview.widget.ViewDragHelper;
 
 public class SlideMenuGroup extends FrameLayout {
-
-    private int  mMenuWidth = 500;
+    private int mMenuWidth = 500;
     private View mMainView, mMenuView;
     private ViewDragHelper mViewDragHelper;
 
@@ -74,7 +73,7 @@ public class SlideMenuGroup extends FrameLayout {
             public void onViewPositionChanged(@NonNull View changedView, int left, int top, int dx, int dy) {
                 super.onViewPositionChanged(changedView, left, top, dx, dy);
 
-                float percent = mMainView.getLeft() / (float)mMenuWidth;
+                float percent = mMainView.getLeft() / (float) mMenuWidth;
                 executeAnimation(percent);
             }
         });
@@ -88,7 +87,7 @@ public class SlideMenuGroup extends FrameLayout {
         mMainView.setScaleX(1 - 0.2f * percent);
         mMainView.setScaleY(1 - 0.2f * percent);
 
-        mMenuView.setTranslationX(-mMenuWidth + mMenuWidth* percent);
+        mMenuView.setTranslationX(-mMenuWidth + mMenuWidth * percent);
     }
 
     @Override
@@ -113,12 +112,12 @@ public class SlideMenuGroup extends FrameLayout {
         return true;
     }
 
-    public void setView(View mainView, ViewGroup.LayoutParams mainParams,View menuView, ViewGroup.LayoutParams params) {
+    public void setView(View mainView, ViewGroup.LayoutParams mainParams, View menuView, ViewGroup.LayoutParams params) {
         this.mMainView = mainView;
         this.mMenuView = menuView;
 
         addView(mMenuView, params);
-        addView(mMainView,mainParams);
+        addView(mMainView, mainParams);
     }
 
     public void closeMenu() {

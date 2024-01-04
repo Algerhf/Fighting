@@ -19,7 +19,6 @@ import com.example.newstart.R;
  * Camera：
  */
 public class CameraImageView extends AppCompatImageView {
-
     private int mProgress;
     private Camera mCamera;
     private Bitmap mBitmap;

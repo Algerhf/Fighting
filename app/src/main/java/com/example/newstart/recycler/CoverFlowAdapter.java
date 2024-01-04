@@ -49,7 +49,7 @@ public class CoverFlowAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     public class CoverFlowViewHolder extends RecyclerView.ViewHolder {
 
-        private AppCompatTextView  mTv;
+        private AppCompatTextView mTv;
         private AppCompatImageView mIv;
 
         public CoverFlowViewHolder(@NonNull View itemView) {

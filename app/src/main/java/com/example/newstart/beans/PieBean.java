@@ -1,7 +1,6 @@
 package com.example.newstart.beans;
 
 public class PieBean {
-
     private int color;
     private float percentage;
 

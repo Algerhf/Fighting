@@ -10,7 +10,6 @@ import android.widget.ScrollView;
  * 事件分发：外部拦截法
  */
 public class CustomScrollView extends ScrollView {
-
     private float mDownPointY;
     private float mConflictHeight;
 

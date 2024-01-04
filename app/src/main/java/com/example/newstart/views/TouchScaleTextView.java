@@ -1,6 +1,5 @@
 package com.example.newstart.views;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -14,8 +13,7 @@ import androidx.appcompat.widget.AppCompatTextView;
  * 多点触控：双指缩放控件
  */
 public class TouchScaleTextView extends AppCompatTextView {
-
-    private int   mode;
+    private int mode;
     private float mOldDist;
     private float mTextSize;
 

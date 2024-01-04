@@ -12,7 +12,6 @@ import androidx.appcompat.widget.AppCompatEditText;
  * 事件分发：内部拦截法
  */
 public class CustomTextView extends AppCompatEditText {
-
     public CustomTextView(@NonNull Context context) {
         super(context);
     }

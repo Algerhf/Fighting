@@ -1,19 +1,22 @@
 package com.example.newstart;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatTextView;
-
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.SeekBar;
 
-import com.example.newstart.views.CameraImageView;
+import com.example.newstart.databinding.ActivityThreeDirectionBinding;
 
-public class ThreeDirectionActivity extends AppCompatActivity {
+public class ThreeDirectionActivity extends BaseActivity {
+    private ActivityThreeDirectionBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_three_direction);
+        mBinding = ActivityThreeDirectionBinding.inflate(getLayoutInflater());
+        setContentView(mBinding.getRoot());
+    }
 
+    public static void actionStart(Context context) {
+        context.startActivity(new Intent(context, ThreeDirectionActivity.class));
     }
 }

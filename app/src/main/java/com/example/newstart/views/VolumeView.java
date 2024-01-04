@@ -24,7 +24,7 @@ public class VolumeView extends View {
     private float mBgRadius;
     private float mVolumeRadius;
 
-    private int mBgColor       = 0x60000000;
+    private int mBgColor = 0x60000000;
     private int mVolumeBgColor = 0x80000000;
 
     private float mBorderWidth;
@@ -34,13 +34,13 @@ public class VolumeView extends View {
     private RectF mRectF;
 
     private int mCurVolumeNum;
-    private int mMaxVolume        = 10;
+    private int mMaxVolume = 10;
     private int mUnitVolumeDegree = 360 / mMaxVolume;
 
     private boolean isVolumeUp;
-    private float   mValueAnimated;
+    private float mValueAnimated;
 
-    private int          count = 0;
+    private int count = 0;
     private AudioManager mAudioManager;
 
     public VolumeView(Context context) {

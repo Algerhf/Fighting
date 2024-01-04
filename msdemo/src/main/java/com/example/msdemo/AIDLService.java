@@ -17,7 +17,7 @@ public class AIDLService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return iBinder;
+        return null;
     }
 
     MyInterface.Stub iBinder = new MyInterface.Stub() {

@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PieView extends View {
-
     private final int DEFAULT_DIMENSION = 50;
 
     private List<PieBean> mList = new ArrayList<>();
@@ -28,7 +27,7 @@ public class PieView extends View {
     private Paint mPaint;
 
     private ValueAnimator mValueAnimator;
-    private float         mValue;
+    private float mValue;
 
     public PieView(Context context) {
         super(context);

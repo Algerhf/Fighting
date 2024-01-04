@@ -1,143 +1,36 @@
 package com.example.newstart;
 
-import android.animation.ValueAnimator;
-import android.content.Intent;
-import android.view.View;
-import android.view.ViewGroup;
+import android.os.Bundle;
 
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.annotation.Nullable;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import com.example.newstart.databinding.ActivityMainBinding;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
-
-    @BindView(R.id.btn_constraint_layout)
-    AppCompatButton mBtn_constraint_layout;
-
-    @BindView(R.id.btn_custom_drawable)
-    AppCompatButton mBtnCustomDrawable;
-
-    @BindView(R.id.btn_xm_clock)
-    AppCompatButton mBtnClock;
-
-    @BindView(R.id.card_3d)
-    AppCompatButton mBtnCard3D;
-
-    @BindView(R.id.btn_camera)
-    AppCompatButton mBtnCamera;
-
-    @BindView(R.id.btn_event_conflict)
-    AppCompatButton mBtnEventConflict;
-
-    @BindView(R.id.btn_multi_touch)
-    AppCompatButton mBtnMultiTouch;
-
-    @BindView(R.id.btn_scroller)
-    AppCompatButton mBtnScroller;
-
-    @BindView(R.id.btn_view_drag)
-    AppCompatButton mBtn_view_drag;
-
-    @BindView(R.id.btn_recycler_view)
-    AppCompatButton mBtn_Recycler_view;
-
-    @BindView(R.id.btn_anim)
-    AppCompatButton mBtn_Anim;
-
-    @BindView(R.id.btn_hw_clock)
-    AppCompatButton mBtn_clock;
-
-    @BindView(R.id.btn_pie)
-    AppCompatButton mBtn_pie;
-
-    @BindView(R.id.btn_volume)
-    AppCompatButton mBtn_volume;
-
-    @BindView(R.id.btn_view_pager)
-    AppCompatButton mBtn_view_pager;
+public class MainActivity extends BaseActivity {
+    private ActivityMainBinding mBinding;
 
     @Override
-    protected int getResId() {
-        return R.layout.activity_main;
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mBinding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(mBinding.getRoot());
+        addListener();
     }
 
-    @Override
-    public void initView() {
-        super.initView();
-        ButterKnife.bind(this);
-
-        mBtn_constraint_layout.setOnClickListener(this);
-        mBtnCustomDrawable.setOnClickListener(this);
-        mBtnCard3D.setOnClickListener(this);
-        mBtnClock.setOnClickListener(this);
-        mBtnCamera.setOnClickListener(this);
-        mBtnEventConflict.setOnClickListener(this);
-        mBtnMultiTouch.setOnClickListener(this);
-        mBtnScroller.setOnClickListener(this);
-        mBtn_view_drag.setOnClickListener(this);
-        mBtn_Recycler_view.setOnClickListener(this);
-        mBtn_Anim.setOnClickListener(this);
-        mBtn_clock.setOnClickListener(this);
-        mBtn_pie.setOnClickListener(this);
-        mBtn_volume.setOnClickListener(this);
-        mBtn_view_pager.setOnClickListener(this);
-
-
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_constraint_layout:
-                ConstrainLayoutActivity.actionStart(mContext);
-                break;
-            case R.id.btn_custom_drawable:
-                startActivity(new Intent(MainActivity.this, CustomDrawableActivity.class));
-                break;
-            case R.id.card_3d:
-                startActivity(new Intent(MainActivity.this, Rotate3dActivity.class));
-                break;
-            case R.id.btn_xm_clock:
-                startActivity(new Intent(MainActivity.this, ClockViewActivity.class));
-                break;
-            case R.id.btn_camera:
-                startActivity(new Intent(MainActivity.this, ThreeDirectionActivity.class));
-                break;
-            case R.id.btn_event_conflict:
-                startActivity(new Intent(MainActivity.this, EventConflictActivity.class));
-                break;
-            case R.id.btn_multi_touch:
-                startActivity(new Intent(MainActivity.this, MultyTouchActivity.class));
-                break;
-            case R.id.btn_scroller:
-                ScrollerActivity.actionStart(mContext);
-                break;
-            case R.id.btn_view_drag:
-                startActivity(new Intent(MainActivity.this, ViewDragActivity.class));
-                break;
-            case R.id.btn_recycler_view:
-                RecyclerViewActivity.actionStart(MainActivity.this);
-                break;
-            case R.id.btn_anim:
-                AnimActivity.actionStart(mContext);
-                break;
-            case R.id.btn_hw_clock:
-                HwClockActivity.actionStart(mContext);
-                break;
-            case R.id.btn_pie:
-                PieActivity.actionStart(mContext);
-                break;
-            case R.id.btn_volume:
-                VolumeActivity.actionStart(mContext);
-                break;
-
-            case R.id.btn_view_pager:
-                ViewPagerActivity.actionStart(mContext);
-            default:
-                break;
-        }
+    private void addListener() {
+        mBinding.btnConstraintLayout.setOnClickListener(v -> ConstrainLayoutActivity.actionStart(mContext));
+        mBinding.btnCustomDrawable.setOnClickListener(v -> CustomDrawableActivity.actionStart(mContext));
+        mBinding.btnCard3d.setOnClickListener(v -> Rotate3dActivity.actionStart(mContext));
+        mBinding.btnXmClock.setOnClickListener(v -> XmViewActivity.actionStart(mContext));
+        mBinding.btnCamera.setOnClickListener(v -> ThreeDirectionActivity.actionStart(mContext));
+        mBinding.btnEventConflict.setOnClickListener(v -> EventConflictActivity.actionStart(mContext));
+        mBinding.btnMultiTouch.setOnClickListener(v -> MultiTouchActivity.actionStart(mContext));
+        mBinding.btnScroller.setOnClickListener(v -> ScrollerActivity.actionStart(mContext));
+        mBinding.btnViewDrag.setOnClickListener(v -> ViewDragActivity.actionStart(mContext));
+        mBinding.btnRecyclerView.setOnClickListener(v -> RecyclerViewActivity.actionStart(mContext));
+        mBinding.btnAnim.setOnClickListener(v -> AnimActivity.actionStart(mContext));
+        mBinding.btnHwClock.setOnClickListener(v -> HwClockActivity.actionStart(mContext));
+        mBinding.btnPie.setOnClickListener(v -> PieActivity.actionStart(mContext));
+        mBinding.btnVolume.setOnClickListener(v -> VolumeActivity.actionStart(mContext));
     }
 }

@@ -13,8 +13,7 @@ import com.example.newstart.views.ScrollConstraintLayout;
 import java.util.List;
 
 public class MyAdapter extends BaseAdapter {
-
-    private List<String>     mList;
+    private List<String> mList;
     private OnDeleteListener mListener;
 
     private ScrollConstraintLayout mLastView;
@@ -78,8 +77,8 @@ public class MyAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        private AppCompatTextView      mTv;
-        private AppCompatButton        mDelete;
+        private AppCompatTextView mTv;
+        private AppCompatButton mDelete;
         private ScrollConstraintLayout mRoot;
     }
 

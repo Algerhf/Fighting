@@ -12,7 +12,6 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 public class TestScaleView extends View {
-
     private Paint mPaint;
 
     public TestScaleView(Context context) {
@@ -40,20 +39,20 @@ public class TestScaleView extends View {
         super.onDraw(canvas);
         canvas.save();
 
-        RectF rectF = new RectF(0,0,200,200);
+        RectF rectF = new RectF(0, 0, 200, 200);
 
         Matrix matrix = new Matrix();
-        matrix.preTranslate(getWidth()/2,getHeight()/2);
+        matrix.preTranslate(getWidth() / 2, getHeight() / 2);
         canvas.setMatrix(matrix);
         mPaint.setColor(Color.BLACK);
-        canvas.drawRect(rectF,mPaint);
+        canvas.drawRect(rectF, mPaint);
 
-        matrix.preSkew(1.0f,0,200,200);
+        matrix.preSkew(1.0f, 0, 200, 200);
         canvas.setMatrix(matrix);
         mPaint.setColor(Color.RED);
-        canvas.drawRect(rectF,mPaint);
+        canvas.drawRect(rectF, mPaint);
 
-        canvas.drawCircle(0,0,5,mPaint);
+        canvas.drawCircle(0, 0, 5, mPaint);
 
         canvas.restore();
 

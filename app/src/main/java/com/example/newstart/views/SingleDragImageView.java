@@ -12,7 +12,6 @@ import androidx.appcompat.widget.AppCompatImageView;
  * 多点触控：单手拖动图片
  */
 public class SingleDragImageView extends AppCompatImageView {
-
     private int mLeft, mTop;
     private float mStartX, mStartY;
 

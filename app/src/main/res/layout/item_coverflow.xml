@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
         android:id="@+id/item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="item" />
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <ImageView
         android:scaleType="centerCrop"
         android:id="@+id/item_img"
         android:layout_width="300dp"

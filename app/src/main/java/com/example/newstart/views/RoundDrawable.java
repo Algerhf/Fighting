@@ -14,10 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class RoundDrawable extends Drawable {
-
-    private Bitmap       mBmp;
-    private Paint        mPaint;
-    private RectF        mBounds;
+    private final Bitmap mBmp;
+    private final Paint mPaint;
+    private RectF mBounds;
 
     public RoundDrawable(Bitmap bitmap) {
         mBmp = bitmap;

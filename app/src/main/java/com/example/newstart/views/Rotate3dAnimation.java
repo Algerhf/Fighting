@@ -9,13 +9,12 @@ import android.view.animation.Transformation;
  * Camera：翻转动画效果
  */
 public class Rotate3dAnimation extends Animation {
-
-    private float  mFromDegree;
-    private float  mEndDegree;
+    private float mFromDegree;
+    private float mEndDegree;
     private Camera mCamera;
-    private int    mCenterX, mCenterY;
+    private int mCenterX, mCenterY;
     private boolean mReverse;
-    private float   mDepthZ = 400;
+    private float mDepthZ = 400;
 
     public Rotate3dAnimation(float fromDegree, float endDegree, boolean reverse) {
         mFromDegree = fromDegree;

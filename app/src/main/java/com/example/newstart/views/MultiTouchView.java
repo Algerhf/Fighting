@@ -13,7 +13,6 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 public class MultiTouchView extends View {
-
     private boolean hasSecondPoint = false;
     private PointF  mPointF        = new PointF();
     private Paint   mDefaultPaint;

@@ -2,22 +2,23 @@ package com.example.newstart;
 
 import android.content.Context;
 import android.content.Intent;
-import android.view.View;
+import android.os.Bundle;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.annotation.Nullable;
 
-import com.example.newstart.views.GradientImageView;
+import com.example.newstart.databinding.ActivityConstrainLayoutBinding;
 
 public class ConstrainLayoutActivity extends BaseActivity {
+    private ActivityConstrainLayoutBinding mBinding;
 
     @Override
-    protected int getResId() {
-        return R.layout.activity_constrain_layout;
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mBinding = ActivityConstrainLayoutBinding.inflate(getLayoutInflater());
+        setContentView(mBinding.getRoot());
     }
 
-    @Override
     public void initView() {
-        super.initView();
         /**
          * 一、定位
          *   1.1 相对定位

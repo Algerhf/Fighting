@@ -1,20 +1,17 @@
 package com.example.newstart.recycler;
 
 import android.graphics.Rect;
-import android.hardware.SensorManager;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.view.View;
-import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import android.widget.OverScroller;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 public class CoverFlowLayoutManager extends RecyclerView.LayoutManager {
 
     private SparseBooleanArray mHasAttachedItems = new SparseBooleanArray();
-    private SparseArray<Rect>  mItemRects        = new SparseArray<>();
+    private SparseArray<Rect> mItemRects = new SparseArray<>();
 
     private int mItemWidth;
     private int mItemHeight;

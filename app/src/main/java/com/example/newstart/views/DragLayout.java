@@ -6,16 +6,12 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.customview.widget.ViewDragHelper;
 
-import com.example.newstart.R;
-
 public class DragLayout extends LinearLayout {
-
     private static final String TAG = DragLayout.class.getSimpleName();
 
     private ViewDragHelper mViewDragHelper;

@@ -1,29 +1,32 @@
 package com.example.newstart;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatImageView;
-
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
+import com.example.newstart.databinding.ActivityCustomDrawableBinding;
 import com.example.newstart.views.RoundDrawable;
 
-public class CustomDrawableActivity extends AppCompatActivity {
-
-    private static final String TAG = CustomDrawableActivity.class.getSimpleName();
-
-    private AppCompatImageView iv;
+public class CustomDrawableActivity extends BaseActivity {
+    private ActivityCustomDrawableBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_drawable);
+        mBinding = ActivityCustomDrawableBinding.inflate(getLayoutInflater());
+        setContentView(mBinding.getRoot());
+        initView();
+    }
 
+    private void initView() {
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.photo1);
         RoundDrawable drawable = new RoundDrawable(bitmap);
+        mBinding.image.setImageDrawable(drawable);
+    }
 
-        iv = findViewById(R.id.image);
-        iv.setImageDrawable(drawable);
+    public static void actionStart(Context context) {
+        context.startActivity(new Intent(context, CustomDrawableActivity.class));
     }
 }

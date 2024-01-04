@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.animation.LinearInterpolator;
 import android.widget.Scroller;
@@ -16,7 +15,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.example.newstart.R;
 
 public class ScrollConstraintLayout extends ConstraintLayout {
-
     private static final String TAG = ScrollConstraintLayout.class.getSimpleName();
 
     private Scroller mScroller;

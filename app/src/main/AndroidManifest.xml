@@ -32,10 +32,10 @@
         </activity>
         <activity android:name=".CustomDrawableActivity" />
         <activity android:name=".Rotate3dActivity" />
-        <activity android:name=".ClockViewActivity" />
+        <activity android:name=".XmViewActivity" />
         <activity android:name=".ThreeDirectionActivity" />
         <activity android:name=".EventConflictActivity" />
-        <activity android:name=".MultyTouchActivity" />
+        <activity android:name=".MultiTouchActivity" />
     </application>
 
 </manifest>

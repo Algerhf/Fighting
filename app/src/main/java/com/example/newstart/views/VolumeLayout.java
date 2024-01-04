@@ -12,7 +12,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.example.newstart.R;
 
 public class VolumeLayout extends ConstraintLayout {
-
     private VolumeView mVolumeView;
 
     public VolumeLayout(@NonNull Context context) {
@@ -21,7 +20,7 @@ public class VolumeLayout extends ConstraintLayout {
     }
 
     public VolumeLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public VolumeLayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -35,12 +34,12 @@ public class VolumeLayout extends ConstraintLayout {
         mVolumeView = view.findViewById(R.id.volume_view);
     }
 
-    public void volumeUp(){
+    public void volumeUp() {
         mVolumeView.volumeUp();
     }
 
 
-    public void volumeDown(){
+    public void volumeDown() {
         mVolumeView.volumeDown();
     }
 }

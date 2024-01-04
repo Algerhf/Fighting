@@ -12,7 +12,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 public class MyTextView extends AppCompatTextView {
 
-    private Handler mHandler = new Handler(Looper.getMainLooper());
+    private final Handler mHandler = new Handler(Looper.getMainLooper());
 
     public MyTextView(@NonNull Context context) {
         super(context);

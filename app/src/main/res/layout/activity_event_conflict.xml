@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.newstart.views.CustomScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:context=".EventConflictActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <data>
+
+    </data>
+
+    <com.example.newstart.views.CustomScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".EventConflictActivity">
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:scrollbars="vertical"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@android:color/holo_blue_bright"
-            android:gravity="center"
-            android:maxHeight="100dp"
-            android:singleLine="false"
-            android:text="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/holo_blue_bright"
+                android:gravity="center"
+                android:maxHeight="100dp"
+                android:scrollbars="vertical"
+                android:singleLine="false"
+                android:text="123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -42,22 +48,22 @@
 123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 "
-            android:textSize="16sp" />
+                android:textSize="16sp" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="1000dp"
-            android:gravity="center"
-            android:text="" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:gravity="center"
+                android:text="" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="1000dp"
-            android:gravity="center"
-            android:text="" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:gravity="center"
+                android:text="" />
+
+        </LinearLayout>
 
 
-    </LinearLayout>
-
-
-</com.example.newstart.views.CustomScrollView>
+    </com.example.newstart.views.CustomScrollView>
+</layout>

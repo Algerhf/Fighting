@@ -8,7 +8,6 @@ import android.view.ViewConfiguration;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SnapHelper;
 
 public class RecyclerCoverFlowView extends RecyclerView {
 
@@ -52,24 +51,24 @@ public class RecyclerCoverFlowView extends RecyclerView {
     @Override
     public boolean fling(int velocityX, int velocityY) {
         //最小滑动距离
-        int flingX =(int)(velocityX*0.4f);
+        int flingX = (int) (velocityX * 0.4f);
         CoverFlowLayoutManager manager = getCoverFlowLayout();
         double distance = getSplineFlingDistance(flingX);
-        double newDistance = manager.calculateDistance(velocityX,distance);
+        double newDistance = manager.calculateDistance(velocityX, distance);
         int fixVelocityX = getVelocity(newDistance);
-        if(velocityX>0){
+        if (velocityX > 0) {
             flingX = fixVelocityX;
-        }else{
+        } else {
             flingX = -fixVelocityX;
         }
         return super.fling(flingX, velocityY);
     }
 
-    private static       float DECELERATION_RATE = (float) (Math.log(0.78) / Math.log(0.9));
-    private static final float INFLEXION         = 0.35f; // Tension lines cross at (INFLEXION, 1)
-    private              float mPhysicalCoeff;
+    private static float DECELERATION_RATE = (float) (Math.log(0.78) / Math.log(0.9));
+    private static final float INFLEXION = 0.35f; // Tension lines cross at (INFLEXION, 1)
+    private float mPhysicalCoeff;
     // Fling friction
-    private              float mFlingFriction    = ViewConfiguration.getScrollFriction();
+    private float mFlingFriction = ViewConfiguration.getScrollFriction();
 
     private double getSplineFlingDistance(int velocity) {
         final double l = getSplineDeceleration(velocity);
@@ -84,7 +83,6 @@ public class RecyclerCoverFlowView extends RecyclerView {
     }
 
     /**
-     *
      * 39.37英寸 = 1米
      * 0.84f 摩擦因子
      */

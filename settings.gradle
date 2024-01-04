@@ -1,11 +1,33 @@
+pluginManagement {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        flatDir { dirs file('_com_libs').absolutePath }
+
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+
+        google()
+        mavenCentral()
+
+        maven { url "https://jitpack.io" }
+    }
+}
 rootProject.name = "NewStart"
 include ':app'
-include ':javademo'
-include ':toolbardemo'
+include ':eat'
 include ':msdemo'
 include ':jetpack'
-include ':eat'
-
+//
 include ':kotlin:kotlindemo'
 include ':kotlin:kotlindemo2'
 include ':kotlin:kotlincorountine'

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
         android:gravity="center"
         android:text="苹果"
         android:textSize="18sp"
@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
         android:text="香蕉"
         android:gravity="center"
         android:textSize="18sp"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_apple"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
         android:gravity="center"
         android:text="橘子"
         android:textSize="18sp"

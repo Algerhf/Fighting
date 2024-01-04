@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Camera;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -26,11 +25,10 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class HwClockView extends View {
-
     private Paint mClockPaint;
     private Paint mTextPaint;
-    private int   mTextSize;
-    private int   mTextColor;
+    private int mTextSize;
+    private int mTextColor;
 
     private Bitmap mClockBitmap, mClockMaskBitmap;
 
@@ -45,9 +43,9 @@ public class HwClockView extends View {
 
     private ValueAnimator mValueAnimator;
 
-    private static final int  DEFAULT_TEXT_SIZE = 40;
-    private static final long SECOND            = 1000;
-    private static final long MINUTE            = SECOND * 60;
+    private static final int DEFAULT_TEXT_SIZE = 40;
+    private static final long SECOND = 1000;
+    private static final long MINUTE = SECOND * 60;
 
     private String mTimeText;
 
