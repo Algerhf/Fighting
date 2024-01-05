@@ -4,7 +4,19 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.9.0' apply false
 //    id 'com.google.devtools.ksp' version '1.9.0-1.0.13' apply false
 }
-apply from:"config.gradle"
+apply from:"${gradle._BUILD_CONFIG_PATH}/build_info_dependencies.gradle"
+
+subprojects {Project _project ->
+    _project.plugins.whenPluginAdded {Plugin plugin ->
+        if(plugin.class.name in ['com.android.build.gradle.AppPlugin','com.android.build.gradle.LibraryPlugin']){
+            _project.with {
+                apply from: "${gradle._BUILD_CONFIG_PATH}/build_module_basic.gradle"
+            }
+        }
+    }
+}
+
+
 /*buildscript {
     ext.kotlin_version = "1.10.1"
     repositories {
@@ -27,7 +39,7 @@ apply from:"config.gradle"
     }
 }*/
 
-task clean(type: Delete) {
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
 }
 

@@ -6,16 +6,11 @@ plugins {
 
 android {
     namespace "com.example.msdemo"
-    compileSdk rootProject.ext.android.compileSdkVersion
 
     defaultConfig {
         applicationId "com.example.msdemo"
-        minSdk rootProject.ext.android.minSdkVersion
-        targetSdk rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
     }
 
     buildTypes {
@@ -23,11 +18,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
     }
 
     sourceSets{
@@ -45,10 +35,5 @@ android {
 dependencies {
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
-    testImplementation "junit:junit:$junit_version"
-    androidTestImplementation "androidx.test.ext:junit:$android_test_junit_version"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core_version"
-
-    implementation 'androidx.palette:palette:1.0.0'
-    // implementation 'com.google.android.material:material:1.3.0'
+    implementation "androidx.palette:palette-ktx:$palette_version"
 }

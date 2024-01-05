@@ -1,6 +1,5 @@
 package com.example.kotlincoroutine.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,11 +21,10 @@ class UserFragment : Fragment() {
         return mBinding.root
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         mBinding.btnAdd.setOnClickListener {
 
         }
     }
-
 }

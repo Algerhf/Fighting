@@ -23,6 +23,11 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "NewStart"
+
+gradle.ext{
+    _BUILD_CONFIG_PATH = file("_build_config").absolutePath
+}
+
 include ':app'
 include ':eat'
 include ':msdemo'
