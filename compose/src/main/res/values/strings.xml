@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">compose</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_friends">Friends</string>
+    <string name="res_text">显示资源中的文本</string>
+    <string name="test_brush">Do not Allow people dim your shine because they are blinded.Tell them to put some sunglasses</string>
+    <string name="long_test_text">Jetpack Compose is the modern toolkit for building native Android UI. Here\'s where you\'ll find the latest information about using Compose</string>
 </resources>

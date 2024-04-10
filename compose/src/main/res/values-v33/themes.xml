@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.App.Starting" parent="@style/Theme.SplashScreen">
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="android:windowSplashScreenBackground">#ffff00</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">#0000ff</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/ic_flower</item>
+        <item name="android:windowSplashScreenBehavior">icon_preferred</item>
+    </style>
+</resources>
