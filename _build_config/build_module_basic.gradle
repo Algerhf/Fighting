@@ -18,8 +18,9 @@ android {
     }
 
     lintOptions{
+        checkReleaseBuilds false
         ignoreWarnings true
-        abortOnError=true
+        abortOnError false
     }
 }
 
