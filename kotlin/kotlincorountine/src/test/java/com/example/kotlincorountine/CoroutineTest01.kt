@@ -1,11 +1,18 @@
 package com.example.kotlincorountine
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.CoroutineStart
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.supervisorScope
 import org.junit.Test
 import java.io.BufferedReader
 import java.io.FileReader
-import java.lang.ArithmeticException
-import java.lang.IndexOutOfBoundsException
 import kotlin.system.measureTimeMillis
 
 class CoroutineTest01 {
@@ -20,6 +27,7 @@ class CoroutineTest01 {
         val job2 = async {
             delay(200)
             println("job2 finished")
+            "Job2 result"
         }
 
         println(job2.await())
@@ -103,43 +111,56 @@ class CoroutineTest01 {
 
     @Test
     fun `test_start_mode`() = runBlocking {
-        val job = launch(start = CoroutineStart.DEFAULT) {
+/*        val job = launch(start = CoroutineStart.ATOMIC) {
             delay(10000)
             println("job finished")
         }
-    }
+        delay(1000)
+        job.cancel()*/
 
-    fun `test_user`() = runBlocking<Unit>{
-        BufferedReader(FileReader("")).use {
+/*        val job2 = async(start = CoroutineStart.LAZY) {
+            29
+        }
+        // ... 计算
+        job2.cancel()
+        job2.await()*/
 
+        val job4 = async(context = Dispatchers.IO, start = CoroutineStart.UNDISPATCHED) {
+            println("thread：${Thread.currentThread().name}")
         }
     }
 
     @Test
-    fun `test exception propagation2`() = runBlocking{
-        val job1 = GlobalScope.launch {
-            try {
-                throw IndexOutOfBoundsException()
-            } catch (e: Exception) {
-                println("IndexOutOfBoundsException")
+    fun `test_coroutine_scope_builder`() = runBlocking {
+        coroutineScope {
+            val job1 = launch {
+                delay(400)
+                println("jop1 finished.")
+            }
+
+            val job2 = async {
+                delay(200)
+                println("jop2 finished.")
+                "job2 result"
+                throw IllegalArgumentException()
             }
         }
-        job1.join()
+    }
 
-        val deffered = GlobalScope.async {
-            throw ArithmeticException()
-        }
-        deffered.join()
-        delay(1000)
+    @Test
+    fun `test_supervisor_scope_builder`() = runBlocking {
+        supervisorScope {
+            val job1 = launch {
+                delay(400)
+                println("jop1 finished.")
+            }
 
-       supervisorScope {
-           launch {
-
-           }
-       }
-
-        coroutineScope {
-
+            val job2 = async {
+                delay(200)
+                println("jop2 finished.")
+                "job2 result"
+                throw IllegalArgumentException()
+            }
         }
     }
 }
