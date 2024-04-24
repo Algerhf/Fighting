@@ -10,5 +10,6 @@
         <item name="windowSplashScreenIconBackgroundColor">#0000ff</item>
         <item name="windowSplashScreenAnimationDuration">200</item>
         <item name="windowSplashScreenBackground">#ffff00</item>
+        <item name="windowNoTitle">true</item>
     </style>
 </resources>

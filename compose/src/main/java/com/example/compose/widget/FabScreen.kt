@@ -1,9 +1,11 @@
 package com.example.compose.widget
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -21,33 +23,30 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun FabScreen(modifier: Modifier = Modifier) {
-    Column(modifier) {
-        FloatingActionButton(onClick = { /*TODO*/ }) {
+    Column(
+        modifier = modifier.padding(10.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp)
+    ) {
+        FloatingActionButton(onClick = { }) {
             Icon(Icons.Filled.Add, contentDescription = null)
         }
-
-        Spacer(modifier = Modifier.height(10.dp))
 
         SmallFloatingActionButton(
             onClick = { },
-            containerColor = MaterialTheme.colorScheme.secondaryContainer,
-            contentColor = MaterialTheme.colorScheme.secondary
+            containerColor = MaterialTheme.colorScheme.surfaceContainer,
+            contentColor = MaterialTheme.colorScheme.onSurface
         ) {
             Icon(Icons.Filled.Add, contentDescription = null)
         }
-
-        Spacer(modifier = Modifier.height(10.dp))
 
         LargeFloatingActionButton(
             onClick = { },
             shape = CircleShape,
-            containerColor = MaterialTheme.colorScheme.secondaryContainer,
-            contentColor = MaterialTheme.colorScheme.secondary
+            containerColor = MaterialTheme.colorScheme.surfaceVariant,
+            contentColor = MaterialTheme.colorScheme.onSurfaceVariant
         ) {
             Icon(Icons.Filled.Add, contentDescription = null)
         }
-
-        Spacer(modifier = Modifier.height(10.dp))
 
         ExtendedFloatingActionButton(
             onClick = { },
@@ -59,7 +58,7 @@ fun FabScreen(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun FabScreenPreview() {
     FabScreen()

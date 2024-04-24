@@ -7,20 +7,13 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
-import androidx.compose.foundation.layout.statusBars
-import androidx.compose.foundation.layout.systemBars
-import androidx.compose.foundation.layout.windowInsetsPadding
-import androidx.compose.foundation.layout.windowInsetsTopHeight
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
@@ -40,7 +33,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
@@ -57,8 +49,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.example.compose.anim.AnimationScreen
 import com.example.compose.ui.theme.NewStartTheme
-import com.example.compose.widget.TextScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -179,7 +171,7 @@ class SecondActivity : ComponentActivity() {
             val myModifier = Modifier.padding(innerPadding)
             Log.d("SecondActivity", "innerPadding = $innerPadding")
             // MessageListScreen(modifier = Modifier.padding(innerPadding))
-            TextScreen(modifier = myModifier)
+            //TextScreen(modifier = myModifier)
 //            ButtonScreen(modifier = Modifier.padding(innerPadding))
 //            FabScreen(modifier = Modifier.padding(innerPadding))
 //            CardScreen(modifier = Modifier.padding(innerPadding))
@@ -187,6 +179,8 @@ class SecondActivity : ComponentActivity() {
 //            FlowScreen(modifier = Modifier.padding(innerPadding))
 
 //            HorizontalPagerTest(modifier = Modifier.padding(innerPadding))
+
+            AnimationScreen(Modifier.padding(innerPadding))
         }
     }
 

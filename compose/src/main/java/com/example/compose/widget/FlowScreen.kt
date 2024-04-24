@@ -57,7 +57,7 @@ fun FlowScreen(modifier: Modifier = Modifier) {
 @Composable
 fun FlowScreen2(modifier: Modifier = Modifier) {
     FlowRow(
-        modifier = modifier.padding(horizontal = 10.dp),
+        modifier = modifier.padding(10.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         maxItemsInEachRow = 3
     ) {
@@ -83,13 +83,13 @@ fun FlowScreen2(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun FlowScreenPreview() {
     FlowScreen()
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun FlowScreenPreview2() {
     FlowScreen2()
