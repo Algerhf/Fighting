@@ -1,8 +1,10 @@
 package com.example.compose.widget
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
@@ -28,7 +30,10 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ChipScreen(modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
+    Column(
+        modifier = modifier.padding(10.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp)
+    ) {
         AssistChip(
             leadingIcon = {
                 Icon(Icons.Filled.Settings, contentDescription = null)
@@ -36,8 +41,6 @@ fun ChipScreen(modifier: Modifier = Modifier) {
             onClick = { },
             label = { Text(text = "AssistChip") }
         )
-
-        Spacer(modifier = Modifier.height(10.dp))
 
         var selected by remember {
             mutableStateOf(false)
@@ -65,7 +68,6 @@ fun ChipScreen(modifier: Modifier = Modifier) {
         }
 
         if (enabled) {
-            Spacer(modifier = Modifier.height(10.dp))
             InputChip(selected = enabled,
                 onClick = { enabled = !enabled },
                 label = { Text(text = "InputChip") },
@@ -86,7 +88,6 @@ fun ChipScreen(modifier: Modifier = Modifier) {
             )
         }
 
-        Spacer(modifier = Modifier.height(10.dp))
         SuggestionChip(
             onClick = {},
             label = { Text(text = "SuggestionChip") }
@@ -94,7 +95,7 @@ fun ChipScreen(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun ChipScreenPreview() {
     ChipScreen()

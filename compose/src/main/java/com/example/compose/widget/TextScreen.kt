@@ -79,7 +79,6 @@ fun TextScreen(modifier: Modifier = Modifier) {
         modifier = modifier
             .fillMaxWidth()
             .verticalScroll(rememberScrollState())
-
     ) {
 
         var startIndex by remember {
