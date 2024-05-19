@@ -73,7 +73,7 @@ class CoroutineTest01 {
     }
 
     @Test
-    fun `test_coroutine_sync`() = runBlocking {
+    fun `test_sync`() = runBlocking {
         val time = measureTimeMillis {
             val one = doOne()
             val two = doTwo()
@@ -84,7 +84,7 @@ class CoroutineTest01 {
     }
 
     @Test
-    fun `test_coroutine_async`() = runBlocking {
+    fun `test_combine_async`() = runBlocking {
         val time = measureTimeMillis {
             val one = async { doOne() }
             val two = async { doTwo() }

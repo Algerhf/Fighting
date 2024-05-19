@@ -67,14 +67,29 @@ class CoroutineTest05 {
         job.join()
 
         val deferred = GlobalScope.async {
-            throw ArithmeticException()
+            try {
+                throw ArithmeticException()
+            } catch (e: Exception) {
+                println("Catch ArithmeticException1")
+            }
         }
 
         try {
             deferred.await()
         } catch (e: Exception) {
-            println("Catch ArithmeticException")
+            println("Catch ArithmeticException2")
         }
+    }
+
+    @Test
+    fun `test exception propagation2`() = runBlocking{
+        val scope = CoroutineScope(Job())
+        val job = scope.launch {
+            async {
+                throw IllegalArgumentException()
+            }
+        }
+        job.join()
     }
 
     @Test

@@ -5,6 +5,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.async
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.cancelAndJoin
@@ -15,9 +16,11 @@ import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.supervisorScope
+import kotlinx.coroutines.withContext
 import org.junit.Test
 import java.io.BufferedReader
 import java.io.FileReader
+import kotlin.coroutines.CoroutineContext
 import kotlin.system.measureTimeMillis
 
 class CoroutineTest03 {
@@ -42,44 +45,33 @@ class CoroutineTest03 {
 
     @Test
     fun `test_use_function`() = runBlocking<Unit> {
-        BufferedReader(FileReader("")).use {
-
+        BufferedReader(FileReader("f://study.txt")).use {
+            val lines: List<String> = it.readLines()
+            lines.forEach {line ->
+                println(line)
+            }
         }
     }
 
     @Test
     fun `test_cancel_with_NonCancellable`() = runBlocking<Unit> {
-        BufferedReader(FileReader("")).use {
-
-        }
-    }
-
-    @Test
-    fun `test exception propagation2`() = runBlocking{
-        val job1 = GlobalScope.launch {
+        val job = launch {
             try {
-                throw IndexOutOfBoundsException()
-            } catch (e: Exception) {
-                println("IndexOutOfBoundsException")
+                repeat(1000){i->
+                    println("job：I‘m sleeping $i ...")
+                    delay(500L)
+                }
+            }finally {
+                withContext(NonCancellable){
+                    println("job：I’m running finally")
+                    delay(100)
+                    println("job：And I've just delayed for 1 sec because I’m non-cancellable")
+                }
             }
         }
-        job1.join()
-
-        val deffered = GlobalScope.async {
-            throw ArithmeticException()
-        }
-        deffered.join()
-        delay(1000)
-
-        supervisorScope {
-            launch {
-
-            }
-        }
-
-        coroutineScope {
-
-        }
+        delay(1300)
+        println("main：I'm tried of waiting")
+        job.cancelAndJoin()
+        println("main：Now I can quit.")
     }
-
 }
