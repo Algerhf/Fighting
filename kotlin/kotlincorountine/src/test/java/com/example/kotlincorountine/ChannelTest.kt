@@ -1,4 +1,4 @@
-package com.example.kotlincoroutine
+package com.example.kotlincorountine
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.BroadcastChannel
@@ -26,8 +26,7 @@ class ChannelTest {
 
         val consumer = GlobalScope.launch {
             while (true) {
-
-                var element = channel.receive()
+                val element = channel.receive()
                 println("receive $element")
             }
         }
@@ -51,7 +50,7 @@ class ChannelTest {
         val consumer = GlobalScope.launch {
             while (true) {
                 delay(2000)
-                var element = channel.receive()
+                val element = channel.receive()
                 println("receive $element")
             }
         }
@@ -72,10 +71,14 @@ class ChannelTest {
         }
 
         val consumer = GlobalScope.launch {
-            val iterator = channel.iterator()
+            /*val iterator = channel.iterator()
             while (iterator.hasNext()) {
 
                 val element = iterator.next()
+                println("receive $element")
+                delay(2000)
+            }*/
+            for (element in channel){
                 println("receive $element")
                 delay(2000)
             }
@@ -137,7 +140,7 @@ class ChannelTest {
             channel.close()
             println(
                 """close channel
-                | - ClosedForSend:${channel.isClosedForSend}
+                | - isClosedForSend:${channel.isClosedForSend}
                 | - isClosedForReceive:${channel.isClosedForReceive}""".trimMargin()
             )
         }

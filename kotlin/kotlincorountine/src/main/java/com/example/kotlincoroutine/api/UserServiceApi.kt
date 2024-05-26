@@ -1,6 +1,6 @@
 package com.example.kotlincoroutine.api
 
-import com.example.kotlincoroutine.bean.User
+import com.example.kotlincoroutine.bean.Users
 import okhttp3.OkHttpClient
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -21,6 +21,6 @@ val userServiceApi: UserServiceApi by lazy {
 interface UserServiceApi {
 
     @GET("user")
-    suspend fun getUser(@Query("name") name: String): User
+    suspend fun getUser(@Query("name") name: String): Users
 
 }

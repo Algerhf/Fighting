@@ -1,4 +1,4 @@
-package com.example.kotlincoroutine
+package com.example.kotlincorountine
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.sync.Mutex
@@ -24,7 +24,7 @@ class ChannelTest03 {
 
     @Test
     fun `test safe concurrent`() = runBlocking {
-        var count = AtomicInteger(0)
+        val count = AtomicInteger(0)
         List(1000) {
             GlobalScope.launch {
                 count.incrementAndGet()
