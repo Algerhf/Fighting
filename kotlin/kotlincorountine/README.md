@@ -143,7 +143,7 @@ isCancelled = true)。当所有的子协程都完成后，协程会进入已取�
 - 使用SupervisorJob时，一个子协程的运行失败不会影响到其他的子协程。SupervisorJob不会传播异常给它的父级，它会让子协程
   自己处理异常
 #### 3.2.1.2 supervisorScope
-当作业自身执行失败的时候，所有子作业将会被全部取消。
+当作业自身执行失败的时候，所有子作业将会被全部取消。 
 
 ### 3.2.2 异常的捕获
 - 使用CoroutineExceptionHandler对协程的异常进行捕获。 
