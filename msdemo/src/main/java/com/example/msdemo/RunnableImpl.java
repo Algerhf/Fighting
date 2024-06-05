@@ -13,7 +13,7 @@ public class RunnableImpl implements Runnable {
 
             synchronized (obj) {
 
-                if(tickets>0) {
+                if (tickets > 0) {
                     try {
                         Thread.sleep(20);
                     } catch (InterruptedException e) {

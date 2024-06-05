@@ -31,7 +31,7 @@ gradle.ext{
 include ':app'
 include ':eat'
 include ':msdemo'
-include ':jetpack'
+include ':jetpack:lifecycles'
 //
 include ':kotlin:kotlindemo'
 include ':kotlin:kotlindemo2'
