@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.example.lifecycles.lifecycle.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NewStart">
+        <activity
+            android:name="com.example.lifecycles.paging.PagingActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.lifecycles.room.Room1Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.lifecycles.databinding.DataBinding7Activity" />
+        <activity android:name="com.example.lifecycles.databinding.DataBinding6Activity" />
+        <activity android:name="com.example.lifecycles.databinding.DataBinding5Activity" />
+        <activity android:name="com.example.lifecycles.databinding.DataBinding4Activity" />
+        <activity android:name="com.example.lifecycles.databinding.DataBinding3Activity" />
+        <activity android:name="com.example.lifecycles.databinding.DataBinding2Activity" />
+        <activity android:name="com.example.lifecycles.databinding.DataBinding1Activity" />
+        <activity android:name="com.example.lifecycles.livedata.LiveData2Activity" />
+        <activity android:name="com.example.lifecycles.livedata.LiveData1Activity" />
+        <activity android:name="com.example.lifecycles.viewmodel.ViewModel1Activity" />
+        <activity android:name="com.example.lifecycles.lifecycle.Lifecycle3Activity" />
+        <activity android:name="com.example.lifecycles.lifecycle.Lifecycle2Activity" />
+        <activity android:name="com.example.lifecycles.lifecycle.Lifecycle1Activity" />
+
+        <service android:name="com.example.lifecycles.lifecycle.MyLocationService" />
+    </application>
+
+</manifest>
