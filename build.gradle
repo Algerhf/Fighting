@@ -2,13 +2,14 @@
 plugins {
     id 'com.android.application' version '8.3.0' apply false
     id 'org.jetbrains.kotlin.android' version '1.9.0' apply false
-    id 'com.google.dagger.hilt.android' version "2.44" apply false
+    id 'com.google.dagger.hilt.android' version "2.46" apply false
 //    id 'com.google.devtools.ksp' version '1.9.0-1.0.13' apply false
 }
 apply from:"${gradle._BUILD_CONFIG_PATH}/build_info_dependencies.gradle"
 
 subprojects {Project _project ->
     _project.plugins.whenPluginAdded {Plugin plugin ->
+        print("_project.name = ${_project.name}  plugin.class.name = ${plugin.class.name}\n")
         if(plugin.class.name in ['com.android.build.gradle.AppPlugin','com.android.build.gradle.LibraryPlugin']){
             _project.with {
                 apply from: "${gradle._BUILD_CONFIG_PATH}/build_module_basic.gradle"

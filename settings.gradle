@@ -32,8 +32,12 @@ include ':app'
 include ':eat'
 include ':msdemo'
 include ':jetpack:lifecycles'
+include ':jetpack:paging'
+include ':jetpack:hilt'
+
 //
 include ':kotlin:kotlindemo'
 include ':kotlin:kotlindemo2'
 include ':kotlin:kotlincorountine'
 include ':compose'
+
