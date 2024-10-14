@@ -7,5 +7,3 @@ test by master
 第二次测试 git commit -a 这个指令
 
 这个内容要添加到暂存区
-
-我要修改描述
